@@ -1,0 +1,48 @@
+body{
+    background-image: url(Plano\ de\ Fundo\ Naruto.jpg);
+}
+
+#quiz-container{
+    display: block;
+    background-color: rgb(251, 247, 116);
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    margin-top: 300px;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#quiz-container h1{
+    font-size: 250%;
+}
+
+#quiz-container h2{
+    font-size: 250%;
+}
+
+#feedback {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap; /* Garante que as imagens fiquem em uma linha */
+}
+
+.naruto-certo {
+    display: flex;
+    margin-right: -20px;
+    margin-left: -20px;
+    width: 10vw; /* Ajuste o tamanho conforme necessário */
+    height: 15vw;
+}
+
+.naruto-errado {
+    display: flex;
+    margin-right: -20px;
+    margin-left: -20px;
+    width: 10vw; /* Ajuste o tamanho conforme necessário */
+    height: 10vw;
+    padding-top: 80px;
+}
+
