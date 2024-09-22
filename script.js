@@ -61,13 +61,18 @@ const alternativaCertaElement = document.getElementById('NarutoCerto');
 const alternativaErradaElement = document.getElementById('NarutoErrado');
 const nextBotao = document.getElementById('nextBotao');
 const feedbackElement = document.getElementById('feedback');
+const perguntasEmbaralhadas = embaralhaArray(perguntas);
 const clickSound = new Audio('naruto clone.mp3');
 
 function mostraPergunta() {
     const currentPergunta = perguntas[currentPerguntaIndex];
     perguntaElement.textContent = currentPergunta.pergunta;
     alternativasElement.innerHTML = ''; // Limpar alternativas anteriores
-    currentPergunta.alternativas.forEach(alternativa => {
+    
+    // Embaralhar as alternativas
+    const alternativasEmbaralhadas = embaralhaArray([...currentPergunta.alternativas]);
+    
+    alternativasEmbaralhadas.forEach(alternativa => {
         const botao = document.createElement('button');
         botao.textContent = alternativa;
         botao.addEventListener('click', (event) => {clickSound.play();selectResposta(event);});
@@ -94,6 +99,18 @@ function selectResposta(event) {
         // Lógica para quando todas as perguntas foram respondidas
     }
 }
+
+function embaralhaArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+perguntasEmbaralhadas.forEach(pergunta => {
+    console.log(pergunta);
+});
 
 function mostrarFeedback(tipo) {
     const img = document.createElement('img');
