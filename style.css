@@ -76,11 +76,13 @@ button{
         display: 1 1 auto;
         margin-left: -15px;
         margin-right: -15px;
-        width: 20vw;
+        height: 40vw;
+        width:40vw;
     }
     .naruto-errado{
         display: 1 1 auto;
-        width: 15vw;
+        height: 30vw;
+        width: 30vw;
 
     }
     #nextBotao{
