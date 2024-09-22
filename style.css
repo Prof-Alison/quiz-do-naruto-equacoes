@@ -1,5 +1,6 @@
 body{
     background-image: url(Plano\ de\ Fundo\ Naruto.jpg);
+
 }
 
 #quiz-container{
@@ -16,11 +17,26 @@ body{
 }
 
 #quiz-container h1{
-    font-size: 250%;
+    font-size: 5vw;
 }
 
 #quiz-container h2{
-    font-size: 250%;
+    font-size: 3vw;
+}
+
+#quiz-container p{
+    font-size: 3vw;
+}
+
+button{
+    padding: 10px;
+    display: -ms-inline-grid;
+    margin: 10px;
+    width: 10vw;
+    font-size: 1.5vw;
+    background-color:rgb(249, 242, 33);
+    color: black;
+    border-radius: 10px;
 }
 
 #feedback {
@@ -31,18 +47,41 @@ body{
 
 .naruto-certo {
     display: flex;
-    margin-right: -20px;
-    margin-left: -20px;
+    margin-right: -1vw;
+    margin-left: -1vw;
     width: 10vw; /* Ajuste o tamanho conforme necessário */
     height: 15vw;
 }
 
 .naruto-errado {
     display: flex;
-    margin-right: -20px;
-    margin-left: -20px;
+    margin-right: -1vw;
+    margin-left: -1vw;
     width: 10vw; /* Ajuste o tamanho conforme necessário */
     height: 10vw;
-    padding-top: 80px;
+    padding-top: 5vw;
+}
+
+@media (max-width:600px) {
+    .naruto-certo{
+        display:flex;
+        margin-left: -15px;
+        margin-right: -15px;
+        width: 20vw;
+    }
+    .naruto-errado{
+        display: flex;
+        width: 15vw;
+        padding-top: ;
+    }
+    #nextBotao{
+        width: 20vw;
+    }
+    button{
+        padding: 10px;
+        width: 10vw;
+        font-size: 2vw;
+        border-radius: 10px;
+    }
 }
 

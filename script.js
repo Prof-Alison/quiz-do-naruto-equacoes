@@ -1,53 +1,53 @@
 const perguntas = [
     {
-        pergunta: "x/2 + 1 = 2",
+        pergunta: `$$\\frac{x}{2} + 1 = 2$$`,
         alternativas: ["4", "0", "2", "-1"],
         resposta: "2"
     },
     {
-        pergunta: "2x/3 - 1 = 3",
+        pergunta: "$$\\frac{2x}{3} - 1= 3$$",
         alternativas: ["1", "4", "3", "6"],
         resposta: "6"
     },
     {
-        pergunta: "1 - x = -3",
+        pergunta: "$$\\ 1 - x = -3$$",
         alternativas: ["4", "-4", "-2", "3"],
         resposta: "4"
     },
     {
-        pergunta: "1 - x = -2 + 2x",
+        pergunta: "$$\\ 1 - x = -2 + 2x$$",
         alternativas: ["-2", "1", "3", "2"],
         resposta: "1"
     },
     {
-        pergunta: "x/3 + 4 = 1",
+        pergunta: "$$\\frac{x}{3} + 4 = 1$$",
         alternativas: ["2", "15", "-9", "9"],
         resposta: "-9"
     },
     {
-        pergunta: "-x - 1 = 5",
+        pergunta: "$$\\ -x - 1 = 5$$",
         alternativas: ["-6", "4", "6", "-4"],
         resposta: "-6"
     },
     {
-        pergunta: "-x/2 + 1 = 2",
+        pergunta: "$$\\frac{-x}{2} + 1 = 2$$",
         alternativas: ["0", "3", "-6", "-2"],
         resposta: "-2"
     },
     {
-        pergunta: "x/2 = -3",
+        pergunta: "$$\\frac{x}{2} = -3$$",
         alternativas: ["6", "-6", "3", "-1,5"],
         resposta: "-6"
     },
     {
-        pergunta: "4/x = 1",
+        pergunta: "$$\\frac{4}{x} = 1$$",
         alternativas: ["1", "2", "4", "3"],
         resposta: "4"
     },
     {
-        pergunta: "-2/x + 1 = 1",
+        pergunta: "$$\\frac{-2}{x} + 1 = 0$$",
         alternativas: ["4", "-2", "0", "2"],
-        resposta: "0"
+        resposta: "2"
     }
 ];
 
@@ -63,8 +63,6 @@ const nextBotao = document.getElementById('nextBotao');
 const feedbackElement = document.getElementById('feedback');
 const clickSound = new Audio('naruto clone.mp3');
 
-
-
 function mostraPergunta() {
     const currentPergunta = perguntas[currentPerguntaIndex];
     perguntaElement.textContent = currentPergunta.pergunta;
@@ -75,6 +73,7 @@ function mostraPergunta() {
         botao.addEventListener('click', (event) => {clickSound.play();selectResposta(event);});
         alternativasElement.appendChild(botao);
     });
+    MathJax.typeset(); // Chame o MathJax para processar o conteúdo matemático
 }
 
 function selectResposta(event) {
@@ -103,7 +102,6 @@ function mostrarFeedback(tipo) {
     img.className = tipo === 'correto' ? 'naruto-certo' : 'naruto-errado';
     feedbackElement.appendChild(img);
 }
-
 
 nextBotao.addEventListener('click', mostraPergunta);
 mostraPergunta();
